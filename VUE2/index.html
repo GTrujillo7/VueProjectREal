@@ -1,0 +1,42 @@
+<!DOCTYPE html> 
+
+<html lang="es">
+    
+    <head>
+        
+        <meta charset="utf-8">
+        
+        <title>VueJS V2 Listas</title>
+        
+</head>
+   
+    <body>
+         <div id="main">
+             <ul>
+                 <li v-for="item in people">{{ item }}</li> <!- v-for recorre arreglo -->
+             </ul>
+             <input type="text" v-model="name" v-on:keyup.enter="addName" placeholder="Ingresa un nombre">
+         </div>
+         
+         <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+         <script type="text/javascript"> 
+         
+             new Vue({
+                 el: "#main", // referencia al div main
+                 data: {
+                     people: ["Lynda","Isabela","Diana", "Luisa"] //Array
+                 },
+                 name: "", //asociado al input v-model "name"
+                 methods: {
+                     addName: function(){
+                         this.people.push(this.name); // en people agrega este nombre
+                         this.name= ""; // Esto limpia el input al dar enter
+                     }
+                 }
+             });
+             
+         </script>
+     
+     </body>
+      
+</html>

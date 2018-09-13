@@ -1,0 +1,36 @@
+<!DOCTYPE html> 
+
+<html lang="es">
+    
+    <head>
+        
+        <meta charset="utf-8">
+        
+        <title>Vuejs V2 V-Bind</title>
+        
+</head>
+     
+    <body>
+         <div id="main">
+            <input type="text" v-model="info">
+            <p v-bind:title="info">Texto de relleno... {{info}} </p> <!-- lo del input de pone aqui -->
+             <!-- v-bind:title="info" pone una etiqueta que me da el valor -->
+             
+         </div>
+          
+         <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+         <script type="text/javascript"> 
+            new Vue({
+                el:"#main",
+                data: {
+                    info:""
+                }
+                
+            });
+             
+         </script>
+         
+     
+     </body>
+      
+</html>
